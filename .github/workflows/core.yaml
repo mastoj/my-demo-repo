@@ -1,0 +1,19 @@
+name: Read core varlues
+
+on: [push]
+
+env:
+  RG_HELLO: ${{ secrets.RG_HELLO }}
+  PULUMI_ACCESS_TOKEN: ${{ secrets.PULUMI_ACCESS_TOKEN }}
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Install packages
+        working-directory: ./operations/core
+        run: npm install
+      - name: Pulumi up
+        working-directory: ./operations/core
+        run: pulumi up -y -s dev
