@@ -1,6 +1,11 @@
 name: Read core varlues
 
-on: [push]
+# Only trigger on push and contains a change in a folder under operations/core
+on:
+  push:
+    paths:
+      - "operations/core/**"
+  workflow_dispatch:
 
 env:
   RG_HELLO: ${{ secrets.RG_HELLO }}
