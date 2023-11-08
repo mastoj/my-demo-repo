@@ -1,4 +1,4 @@
-name: Read core varlues
+name: Read core values
 
 # Only trigger on push and contains a change in a folder under operations/core
 on:
