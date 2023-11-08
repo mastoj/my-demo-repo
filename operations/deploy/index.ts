@@ -102,6 +102,5 @@ const cdnEndpoint = new azure.cdn.Endpoint(
 );
 
 export default {
-  cdnEndpoint: cdnEndpoint.hostName.apply((hostName) => `https://${hostName}`),
   originHostname: originHostname.apply((hostName) => `https://${hostName}`),
 };
