@@ -1,59 +1,78 @@
 <html>
-<head>
-  <title>Hello Øredev</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
-  <style>
+  <head>
+    <title>Hello Öredev</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body,
+      .main,
+      .main div {
+        margin: 0;
+        padding: 0;
+        border: none;
+        font-family: "Lato", sans-serif;
+      }
+      #spinner {
+        text-align: center;
+        animation-name: spin, depth;
+        animation-timing-function: linear;
+        animation-iteration-count: infinite;
+        animation-duration: 3s;
+      }
+      @keyframes spin {
+        from {
+          transform: rotateY(0deg);
+        }
+        to {
+          transform: rotateY(-360deg);
+        }
+      }
+      @keyframes depth {
+        0% {
+          text-shadow: 0 0 black;
+        }
+        25% {
+          text-shadow: 1px 0 black, 2px 0 black, 3px 0 black, 4px 0 black,
+            5px 0 black;
+        }
+        50% {
+          text-shadow: 0 0 black;
+        }
+        75% {
+          text-shadow: -1px 0 black, -2px 0 black, -3px 0 black, -4px 0 black,
+            -5px 0 black;
+        }
+        100% {
+          text-shadow: 0 0 black;
+        }
+      }
 
-    body, .main, .main div {
-      margin: 0;
-      padding: 0;
-      border: none;
-      font-family: 'Lato', sans-serif;
-    }
-    #spinner {
-      text-align: center;
-      animation-name: spin, depth;
-      animation-timing-function: linear;
-      animation-iteration-count: infinite;
-      animation-duration: 3s;
-    }
-    @keyframes spin {
-      from { transform: rotateY(0deg); }
-      to { transform: rotateY(-360deg); }
-    }
-    @keyframes depth {
-      0% { text-shadow: 0 0 black; }
-      25% { text-shadow: 1px 0 black, 2px 0 black, 3px 0 black, 4px 0 black, 5px 0 black; }
-      50% { text-shadow: 0 0 black; }
-      75% { text-shadow: -1px 0 black, -2px 0 black, -3px 0 black, -4px 0 black, -5px 0 black; }
-      100% { text-shadow: 0 0 black; }
-    }
+      .main {
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: black;
+      }
+      .main div {
+        font-size: 100px;
+        color: white;
+      }
 
-    .main {
-      width: 100vw;
-      height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      background-color: black;
-    }
-    .main div {
-      font-size: 100px;
-      color: white;
-    }
-
-    .animate-3d-rotate {
-      animation: animate-3d-rotate 5s linear infinite;
-
-    }
-  </style>
-</head>
-<body>
-
-  <main class="main">
-    <div id="spinner">Hello Öredev!</div>
-  </main>
-</body>
+      .animate-3d-rotate {
+        animation: animate-3d-rotate 5s linear infinite;
+      }
+    </style>
+  </head>
+  <body>
+    <main class="main">
+      <div id="spinner">Hello Öredev!</div>
+    </main>
+  </body>
 </html>

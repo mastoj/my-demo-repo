@@ -4,7 +4,7 @@ import * as synced from "@pulumi/synced-folder";
 
 const indexHtml = "index.html";
 const errorHtml = "error.html";
-const wwwFolder = "./www";
+const wwwFolder = "../../www";
 const azureConfig = new pulumi.Config("azure-native");
 const location = azureConfig.require("location");
 
@@ -103,4 +103,5 @@ const cdnEndpoint = new azure.cdn.Endpoint(
 
 export default {
   cdnEndpoint: cdnEndpoint.hostName.apply((hostName) => `https://${hostName}`),
+  originHostname: originHostname.apply((hostName) => `https://${hostName}`),
 };
